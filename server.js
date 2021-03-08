@@ -22,7 +22,7 @@ const data2 = mongoose.model('data2', dataSchema);
 // export mod
 //module.exports= data2;
 //api routes
-app.get('/',  (req, res) => {
+app.get('/db',  (req, res) => {
     data2.find({}, function(err, r){
         if(err) throw err;
         res.render('index', {
