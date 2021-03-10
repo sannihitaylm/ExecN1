@@ -3,10 +3,10 @@ const mongoose = require('mongoose');
 const app = express();
 let port=process.env.PORT || 4000;
 const ejs = require('ejs');
+//importing ejs
+//const importData = require('./index.ejs');
 //mongoose
 const url = 'mongodb+srv://sannihita:Ambiguity2017@clustern1.gi4dm.mongodb.net/newDB?retryWrites=true&w=majority';
-//export mod
-//var db = require('./data2');
 
 app.set('view engine', 'ejs');
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -19,12 +19,14 @@ const dataSchema = new mongoose.Schema({
 })
 const data2 = mongoose.model('data2', dataSchema);
 
-// export mod
-//module.exports= data2;
+app.get('/', (req, res) => {
+    res.send('Hello, open your database results using /db');
+})
 //api routes
 app.get('/db',  (req, res) => {
     data2.find({}, function(err, r){
         if(err) throw err;
+        //res.send(importData);
         res.render('index', {
             results : r
         })
