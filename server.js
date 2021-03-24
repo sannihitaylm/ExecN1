@@ -6,7 +6,7 @@ const ejs = require('ejs');
 //importing ejs
 //const importData = require('./index.ejs');
 //mongoose
-const url = 'mongodb+srv://sannihita:Ambiguity2017@clustern1.gi4dm.mongodb.net/newDB?retryWrites=true&w=majority';
+const url = 'mongodb+srv://sannihita:blehbleh@clustern1.gi4dm.mongodb.net/newDB?retryWrites=true&w=majority';
 
 app.set('view engine', 'ejs');
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
